@@ -1,0 +1,25 @@
+{
+    "name": "cpptraj-lang",
+    "displayName": "Cpptraj Lang",
+    "description": "Syntax highlighting for cpptraj lang",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cpptraj",
+            "aliases": ["cpptraj", "cpptraj"],
+            "extensions": [".in",".traj",".trajin"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cpptraj",
+            "scopeName": "source.cpptraj",
+            "path": "./syntaxes/cpptraj.tmLanguage.json"
+        }]
+    }
+}

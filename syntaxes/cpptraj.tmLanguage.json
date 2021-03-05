@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "cpptraj",
+	"patterns": [
+		{
+			"match": "#.*",
+			"name": "comment.line.number-sign"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#entity"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#storages"
+		},
+		{
+			"include": "#support"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cpptraj",
+				"match": "\\b(2drms|activeref|align|angle|angleinfo|angles|areapermol|atomiccor|atomicfluct|atominfo|atommap|atoms|autocorr|autoimage|average|avg|bondinfo|bonds|bounds|box|calc|calcstate|catcrd|center|change|charge|check|checkchirality|checkoverlap|checkstructure|clear|closest|closestwaters|cluster|clusterdihedral|combinecrd|comparetop|contacts|corr|correlationcoe|crdaction|cphstats|crank|crankshaft|crdout|crdfluct|create|createcrd|createreservoir|createset|crosscorr|curvefit|datafile|datafilter|dataset|debug|density|diagmatrix|diffusion|dihedral|dihedralinfo|dihedralrms|dihedrals|dihrms|distance|divergence|drms|drmsd|ds2matrixds2matrix|dssp|energy|ensemble|ensemblesize|ensextension|esander|exit|FFT|filter|fixatomorder|fiximagedbonds|gist|go|grid|hausdorff|hbond|hist|histogram|image|improperinfo|impropers|integrate|ired|jcoupling|kde|lie|lifetime|lipidorder|lipidscd|lessplit|loadcrd|loadtraj|lowestcurve|makestructure|mask|mass|matrix|meltcurve|minimage|modes|molinfo|molsurf|multicurve|multidihedral|multihist|multivector|nastruct|nativecontacts|noexitonerror|noprogress|outtraj|pairwise|parallelanalysis|parmbox|parminfo|parmstrip|parmwrite|permutedihedrals|phipsi|point|prec|precision|principal|printangles|printbonds|printdata|printdihedrals|printimpropers|printub|prnlev|projection|pucker|quit|radgyr|radial|randomizeions|rdf|read|readdata|readensembledata|readinput|regress|remlog|removedata|replicatecell|resinfo|rms|rms2d|rmsavgcorr|rmsf|rog|rotate|rotatedihedral|rotdif|run|runanalysis|runavg|runningavg|runningaverage|scale|scaledihedralk|secstruct|select|selectds|setvelocity|silenceactions|solvent|sortensembledata|spam|spline|splitcoords|stat|statistics|stfcdiffusion|strip|surf|symmrmsd|temp|temperature|ti|time|timecorr|torsion|trajin|trajout|trans|translate|ubinfo|unstrip|unwrap|updateparameters|usediskcache|vector|vectormath|velocityautocorr|volmap|volume|watershell|wavelet|write|writedata|xtalsymm)\\b"
+			},
+			{
+				"name": "keyword.control.cpptraj",
+				"match":"\\b^(angle|average|crdout|charge|check|center|density|dihedrals|distance|ired|lifetime|mask|reference|rmsd|runavg|scale|parm|ti|trajout|image|kde|mass|minimage|volume|trans)\\b"
+			},
+			{
+				"name": "keyword.control.cpptraj",
+				"match":"\\b^(parm)\\b"
+			}
+		]
+		},
+		"entity": {
+			"patterns": [{
+				"name": "storage.modifier.cpptraj",
+				"match": "\\s(parm)\\s"
+			},
+			{
+				"name": "storage.modifier.cpptraj",
+				"match": "\\b(alpha|beta|gamma|delta|epsilon|zeta|nu1|nu2|h1p|c2p|chin|phi|psi|chip|omega|3dna|adpout|all|allframes|altona|amplitude|ang|anti|append|assignrefs|atomxyz|atype|averagelinkage|averageonly|backtrack|backward|basic|betadetail|bfacscale|bfactor|bincenter|binedge|bnd|bose|boxcenter|bridgebyatom|byatom|bymask|bymol|bymol1|bymol2|byres|byres1|byres2|calcall|calcnohb|center1|center2|central|centroid|checkallresidues|circular|cmapdetail|collect|combined|complete|conect|correl|corrplane|covar|crdframes|crdidx|cremer|crossproduct|cumulative|cumulative_nosieve|cutoff|dbscan|deprot|dih|direct|distcovar|distances|dme|doeij|doorder|dorotation|dotangle|dotproduct|dplr|drct|dumpq|e14|elec|electron|ewald|familiar|first|firstatom|force|forward|free|fullmatrix|gauss|gb|geom|gnu|greater|grid|gridsearch|guessbp|header|hieragglo|highprecision|ignorenv|include_ep|includesieved_cdist|includesieveincalc|includesolvent|increment|individual|intout|invert|inverse|keepext|keepfiles|kmeans|last|lastframe|less|linkage|lj|magnitude|map|maponly|maskcenter|mass|maxdist|maxfactor|mexp|mexpk|mexpk_penalty|mindist|model|modify|momentum|multi|mwcovar|namen|nameh|nameca|namec|nameo|namesg|na|nb|nativeout|nb14|negative|nmwiz|nobondcheck|nobondsearch|nobox|nocalc|nochamber|noconect|nocovar|noe_strong|noe_medium|noe_weak|noelec|noensextension|nofit|noframespaces|noheader|noimage|nointramol|nointrares|nomax|nomod|nonbond|none|noorigin|nopbc|noreplicadim|norotate|norm|normdensity|normframe|normint|normpop|nosort|nosparse|nosquare2d|nostdout|notemperature|noter|notime|novdw|novelocity|noxcol|number|occscale|oldpsf|oversets|oxygen|p2|pairlist|para|parse|pdbatom|pdbres|pdbter|pdbv3|perframe|perresavg|perrescenter|perresinvert|pme|pqr|present|previous|printatomnum|ptrajformat|ptrajoutput|purewater|pwrecalc|range360|randompoint|rawcurve|readbox|remdtraj|reorder|repframe|repidx|rescutoff|rmsfit|rot|saveforces|savenonnative|scalepdbe|scd|separate|series|shape|short|sievetoframe|silent|simple|single|skinnb|skipbadframes|skipE|skipS|skipnative|sort|sphere|square2d|srmsd|sum|sybylatom|sybylbond|sybyltype|tensor|teradvance|terbyres|theta|triclinic|trimatrix|trunoct|ucell|ucellx|ucelly|ucellz|usecol21|usefrcascoords|usevelascoords|usevelocity|v14|vdw|veltraj|writeempty|x64|xcol|xydy|xyz|xy|xz|yz|zeromomentum)\\b"
+			},
+			{
+				"name": "storage.modifier.cpptraj",
+				"match": "\\b\\s(parm|reference|rmsd|image|kde|mass|minimage|volume|trans)\\b"
+			}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.cpptraj",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cpptraj",
+					"match": "\\\\."
+				}
+			]
+		},
+		"storages": {
+			"patterns": [{
+				"name": "storage.type.cpptraj",
+				"match": "(?<!\\w)@?(TODO|NOTE|INFO|IDEA|FIXME|CHANGED|XXX|HACK|BUG|TRICKY|DEBUG|OPTIMIZE|WARNING)\\b"
+			}]
+		},
+		"support": {
+			"patterns": [{
+				"name": "support.function.cpptraj",
+				"match": "\\\\\n"
+			},
+			{
+				"name": "support.function.cpptraj",
+				"match": "(\\s:(\\S*)|@(\\S*)|\\*(\\S*))"
+			},
+			{
+				"name": "support.class.cpptraj",
+				"match": "\\b(out)|^(out)"
+			},
+			{
+				"name": "support.class.cpptraj",
+				"match": "\\b((perres perresout)|(relax freq)|perres|perresout|addbond|adpdata|acceptormask|acceptout|amd|amoeba_itmax|amoeba_nsearch|amoeba_tol|anchor|around|as|assignout|avgfmt|avgincrement|avgmax|avgskip|avgout|avout|axis0|axis1|bandwidth|baseref|beg|bestrep|bfacbyres|bfacdata|bfacmax|bins|bondsearch|bound|box|boxref|bptype|bridgeout|bs_fac|bs_points|bs_samples|bs_seed|buffer|byresidue|calcadp|chainid|checkival|choosepoints|closestout|clusterout|clusters|clusterinfo|clustermapout|clustervtime|clustersvtime|cmapdetail|com|contactpdb|countout|corrout|cpopvtime|cprefix|crdname|crdset|curveout|cut|cutelec|cutevdw|cutout|cvtwindow|d0|data|deffout|deltafile|densitycut|dgbulk|dhbulk|dihcovar|diffout|diel|dihedralfile|dihtype|dipole|dir|directsum|dist|distancecut|dme|donormask|donorhmask|dplrout|ds|dsumtol|dt|dvdfile|dx|dy|dz|edata|edataout|emapout|end|eout|epsilonplot|erfcdx|etype|evecs|ewcoeff|ewcoefflj|ext|factor|familiar|fft|filterset|fit_itmax|fit_tol|fixed|form|fracplot|fracplotout|frame|framefile|free|ftype|fuzz|gridcntr|griddim|gridspacn|groovecalc|group|groupby|hbcut|ibeg|idea|iend|ig|index|info|infofile|intrdf|interval|ired|itmax|lagmax|lj|ljswidth|loadpairdist|lower|kdist|kfile|kldiv|klout|kseed|madura|mapout|mask1|mask2|maskmol2|maskout|maskp|maskpdb|matricesout|max|maxit|maxlag|maxmin|maxwidth|mdfrc|mdvel|meshfactor|meshmax|meshmin|meshsize|min|minpoints|mlimits|mobile|move|name|name1|name2|naout|nbrcut|ncorr|newset|nexp|nfft|NHdist|nlayers|nmesh|nmols|nmwizvecs|nmwizfile|nmwizmask|noeout|nncontactpdb|nq|nrows|nskip|nstlim|ntc|ntwx|nvecs|nwout|nx|occdata|occmax|offset|onlyframes|onlymembers|order|origin|origincut|outab|outba|outfile|outprefix|outthermo|outtraj|outxbins|outxmax|outxmin|overlap|overlay|overlayparm|pairdist|parmindex|parmname|parmout|pcmin|pcmax|pdbcut|pdbout|peakcut|peakfile|perresmask|phibins|prec|prefix|printmode|probe|psibins|radii|radscale|random|range|rawrdf|reduce|ref|refdens|readtxt|readinfo|rexp|refcut|refindex|refmask|refrange|reftraj|remap|remlog|remove|removebonds|remdtraj|remdtrajidx|remdtrajvalues|repfmt|reportfile|repout|reptime|reptimeslope|reptimeslopeout|req|res|resmap|resoffset|resout|resrange|resseries|resseriesout|results|resultsout|rk|rmatrix|rmout|rmsout|rseed|rsumtol|rvecin|rvecout|s0|savematrices|savenreps|savevectors|scalesimplex|searchtype|segid|segmask|separateout|seriesnnout|seriesout|setname|sg|sieve|sil|singlerepout|singlerepfmt|site_size|size|skipE|skipS|smoothdensity|solutemask|solv|solventacceptor|solventdonor|solventmask|sparse|splitframe|start|state|stateout|stats|statsout|step|stop|summary|summarysplit|sumout|sx|sy|sz|taildist|tailstart|tailend|tcorr|tempi|tf|thermo|ti|time|time0|tgtrange|title|titletype|tmode|tol|totalout|traj3d|trajargs|trajfmt|trajnames|trajoutfmt|trajoutmask|transout|tstep|type|unsat|update|upper|usedata|uuseries|uvseries|value|vec1|vec2|vecs|vmapout|window|writecontacts|x|xlabel|xmin|xoffset|xstep|xvals|xfmt|y|ylabel|ymin|yoffset|ystep|z|zlabel|zmin|zoffset|zstep|zcut|zanglecut)\\b"
+			},
+			{
+				"name": "support.class.cpptraj",
+				"match": "\\b(^|\\s)(mdcrd|crd|cdf|netcdf|rst|restart|restartnc|dcd|charmm|cor|charmmres|pdb|mol2|binpos|trr|gro|xtc|tng|cif|arc|sqm|sdf|xyz|dtr|conflib)\\b"
+			}
+		]}
+	},
+	"scopeName": "source.cpptraj"
+}
