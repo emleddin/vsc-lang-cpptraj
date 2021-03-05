@@ -4,7 +4,7 @@ This is a [Visual Studio Code](https://code.visualstudio.com/)
 extension to give syntax highlighting to `cpptraj`
 files. It will look for .in, .traj, and .trajin file extensions.
 
-\!\[example of syntax highlighting in editor\]\(images/vscode-highlight.png\)
+![example of syntax highlighting in editor](images/vscode-highlight.png)
 
 ## Related:
 - `cpptraj`: https://github.com/Amber-MD/cpptraj
